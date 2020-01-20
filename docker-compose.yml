@@ -114,7 +114,8 @@ services:
     volumes:
     - ./unifiexporter/:/config/
     restart: unless-stopped
-    expose: 9130
+    expose: 
+      -9130
     networks:
     - monitor-net
     labels:
