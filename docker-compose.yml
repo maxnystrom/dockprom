@@ -83,8 +83,8 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     volumes:
-      - /mnt/grafana:/var/lib/grafana
-      - ${STORAGE_ROOT}/grafana:/etc/grafana/provisioning
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ${STORAGE_ROOT}/grafana:/var/lib/grafana
     environment:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}

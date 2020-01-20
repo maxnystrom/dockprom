@@ -477,7 +477,7 @@
           },
           "targets": [
             {
-              "expr": "sum(node_filesystem_free_bytes{fstype=\"aufs\"})",
+              "expr": "sum(node_filesystem_free_bytes{fstype=\"btrfs\"})",
               "interval": "30s",
               "intervalFactor": 1,
               "legendFormat": "",
@@ -819,11 +819,11 @@
           "targets": [
             {
               "expr": "sum(rate(node_cpu_seconds_total[1m])) by (mode) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\"}))",
-              "intervalFactor": 10,
+              "intervalFactor": 11,
               "legendFormat": "{{ mode }}",
               "metric": "node_cpu_seconds_total",
               "refId": "A",
-              "step": 10
+              "step": 1
             }
           ],
           "timeFrom": null,
