@@ -32,5 +32,13 @@ services:
     network_mode: host
     labels:
       org.label-schema.group: "monitoring"
-  
 
+  unifiexporter:
+    image: b3vis/unifi_exporter:latest
+    container_name: unifiexporter
+    volumes:
+    - ./unifiexporter/:/config/
+    restart: unless-stopped
+    network_mode: host
+    labels:
+      org.label-schema.group: "monitoring"
