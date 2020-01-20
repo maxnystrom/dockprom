@@ -108,6 +108,18 @@ services:
     labels:
       org.label-schema.group: "monitoring"
 
+  unifiexporter:
+    image: b3vis/unifi_exporter:latest
+    container_name: unifiexporter
+    volumes:
+    - ./unifiexporter/:/config/
+    restart: unless-stopped
+    expose: 9130
+    networks:
+    - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+
   caddy:
     image: stefanprodan/caddy:latest
     container_name: caddy
