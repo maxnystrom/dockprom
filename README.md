@@ -11,11 +11,12 @@ A monitoring solution for Docker hosts and containers with [Prometheus](https://
 Clone this repository on your Docker host, cd into dockprom directory and run compose up:
 
 ```bash
-git clone https://github.com/stefanprodan/dockprom
-cd dockprom
-
-ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
+$ git clone https://github.com/maxnystrom/dockprom.git
+$ cd dockprom
+$ sudo docker-compose up -d
 ```
+
+You can change the default login credentials and storage location in the `.env` file.
 
 Prerequisites:
 
@@ -34,10 +35,10 @@ Containers:
 
 ## Setup Grafana
 
-Navigate to `http://<host-ip>:3000` and login with user ***admin*** password ***admin***. You can change the credentials in the compose file or by supplying the `ADMIN_USER` and `ADMIN_PASSWORD` environment variables on compose up. The config file can be added directly in grafana part like this
+Navigate to `http://<host-ip>:3000` and login with user ***username*** password ***password***. Alternately, the config file can be added directly in grafana part like this—
 ```
 grafana:
-  image: grafana/grafana:5.2.4
+  image: grafana/grafana:latest
   env_file:
     - config
 
