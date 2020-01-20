@@ -128,6 +128,7 @@ services:
       - "9090:9090"
       - "9093:9093"
       - "9091:9091"
+      - "9130:9130"
     volumes:
       - ./caddy:/etc/caddy
     environment:
