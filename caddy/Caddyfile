@@ -1,3 +1,13 @@
+:9130 {
+    basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
+    proxy / unifiexporter:9130 {
+            transparent
+        }
+
+    errors stderr
+    tls off
+}
+
 :9090 {
     basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
     proxy / prometheus:9090 {

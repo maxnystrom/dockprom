@@ -34,6 +34,12 @@ scrape_configs:
     static_configs:
       - targets: ['pushgateway:9091']
 
+  - job_name: 'unifiexporter'
+    scrape_interval: 15s
+    honor_labels: true
+    static_configs:
+      - targets: ['unifiexporter:9130']
+
 
 alerting:
   alertmanagers:
